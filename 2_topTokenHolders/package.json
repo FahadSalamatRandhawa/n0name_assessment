@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "moralis": "^2.26.3"
+  },
+  "name": "2_toptokenholders",
+  "version": "1.0.0",
+  "main": "tokenAnalysis.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node tokenAnalysis.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@moralisweb3/common-evm-utils": "^2.26.3"
+  }
+}
