@@ -2,6 +2,7 @@ import Moralis from "moralis";
 import { EvmChain } from "@moralisweb3/common-evm-utils";
 import { configDotenv } from "dotenv";
 
+// Load .env file
 configDotenv()
 
 const fetchTokenTransfers = async () => {
@@ -16,22 +17,26 @@ const fetchTokenTransfers = async () => {
   const response = await Moralis.EvmApi.token.getTokenTransfers({
     address,
     chain,
-    limit: 100,
+    limit: 100,  //Basic tier has 100 limit
   });
 
+//   Extract results
   const {result:transfers}=response.toJSON()
 
+//   Loop and store in an object as mapping, for easier access
   transfers.map((tx)=>{
-    console.log(tx)
     if(tx.to_address!=address){
         if(walletTransfers[tx.to_address]){
             walletTransfers[tx.to_address].received+=1,
             walletTransfers[tx.to_address].total+=1
         }else{
+
+            // for new entry
             walletTransfers[tx.to_address]={received:1,sent:0,total:1}
         }
         
     }
+    
     if(tx.from_address!=address){
         if(walletTransfers[tx.from_address]){
             walletTransfers[tx.from_address].sent+=1,
@@ -42,7 +47,7 @@ const fetchTokenTransfers = async () => {
     }
   })
 
-  console.log(walletTransfers)
+//   Sort in descending order and slice the first 5
   const topWallets = Object.entries(walletTransfers)
         .sort(([, a], [, b]) => b.total - a.total)
         .slice(0, 5);
