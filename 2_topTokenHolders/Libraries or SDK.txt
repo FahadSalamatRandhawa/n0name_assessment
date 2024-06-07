@@ -1,0 +1,3 @@
+Moralis SDK used, Moralis API provides a fast and cheap way to acheive the desired result
+
+Dotenv used to secure api key

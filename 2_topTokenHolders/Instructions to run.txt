@@ -1,0 +1,3 @@
+Create an env file and add your API key, with the same name as in env_backup
+
+run the script command "npm run start" or "pnpm start"

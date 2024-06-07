@@ -5,6 +5,7 @@
   "name": "2_toptokenholders",
   "version": "1.0.0",
   "main": "tokenAnalysis.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node tokenAnalysis.js"
@@ -14,6 +15,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@moralisweb3/common-evm-utils": "^2.26.3"
+    "@moralisweb3/common-evm-utils": "^2.26.3",
+    "dotenv": "^16.4.5"
   }
 }

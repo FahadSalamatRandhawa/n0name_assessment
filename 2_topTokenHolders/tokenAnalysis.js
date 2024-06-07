@@ -1,9 +1,12 @@
-const Moralis = require("moralis").default;
-const { EvmChain } = require("@moralisweb3/common-evm-utils");
+import Moralis from "moralis";
+import { EvmChain } from "@moralisweb3/common-evm-utils";
+import { configDotenv } from "dotenv";
+
+configDotenv()
 
 const fetchTokenTransfers = async () => {
   await Moralis.start({
-    apiKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6IjAxMDU5M2E1LTdmNTktNGVjNS1hNGY1LThlNGJlMzdmYzk0MyIsIm9yZ0lkIjoiMzkwMjQyIiwidXNlcklkIjoiNDAwOTk1IiwidHlwZUlkIjoiYjQ5ZjJiNjUtN2ZkNy00MTk0LTkzZmMtOTE2ZGE1YTFmYjRmIiwidHlwZSI6IlBST0pFQ1QiLCJpYXQiOjE3MTQ0NTgzOTIsImV4cCI6NDg3MDIxODM5Mn0.KKAvSDa4yZBgqe0IGCf1etRRQbnzn1HC2WPpCQHuJJM",
+    apiKey: process.env.MORALIS_API_KEY,
   });
 
   const address = "0x7C58D971A5dAbd46BC85e81fDAE87b511431452E";
@@ -13,7 +16,7 @@ const fetchTokenTransfers = async () => {
   const response = await Moralis.EvmApi.token.getTokenTransfers({
     address,
     chain,
-    limit: 10,
+    limit: 100,
   });
 
   const {result:transfers}=response.toJSON()
@@ -40,7 +43,11 @@ const fetchTokenTransfers = async () => {
   })
 
   console.log(walletTransfers)
+  const topWallets = Object.entries(walletTransfers)
+        .sort(([, a], [, b]) => b.total - a.total)
+        .slice(0, 5);
 
+    console.log(topWallets)
 };
 
 fetchTokenTransfers();
