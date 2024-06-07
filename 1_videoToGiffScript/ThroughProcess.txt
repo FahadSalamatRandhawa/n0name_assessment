@@ -1,0 +1,13 @@
+Initially the approach I had was this
+
+Video --> SlicedGif
+SlicedGif --> Watermarked git
+
+Later I changed my method because to put watermark on gif, each frame would need to be processed individually. Which would consume more resources and time.
+New approach
+
+Video --> SlicedVideo
+SlicedVideo ---> Watermaked Gif
+
+
+used async/await for streamlined processing since it is not an api
