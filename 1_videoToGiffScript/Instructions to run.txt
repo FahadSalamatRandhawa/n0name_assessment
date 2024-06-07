@@ -1,0 +1,3 @@
+Put a video file in the same folder
+
+run the script command "pnpm start" or "npm run start"
