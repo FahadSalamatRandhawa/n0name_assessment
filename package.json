@@ -4,11 +4,14 @@
 		"chroma-js": "^2.4.2",
 		"d3": "^7.9.0",
 		"d3-geo": "^3.1.1",
-		"react-simple-maps": "^3.0.0"
+		"react-simple-maps": "^3.0.0",
+		"react-tooltip": "^5.26.4",
+		"swr": "^2.2.5"
 	},
 	"devDependencies": {
 		"@types/chroma-js": "^2.4.4",
 		"@types/d3": "^7.4.3",
-		"@types/react-simple-maps": "^3.0.4"
+		"@types/react-simple-maps": "^3.0.4",
+		"web3": "^4.9.0"
 	}
 }
