@@ -1,0 +1,6 @@
+Next.js due to its high configurability, server components, server actions, serverless api functions etc
+
+dotenv - to handle secrets
+web3 - to connect with blockchain
+moralist - to get blockchain data
+d3 - map rendering
