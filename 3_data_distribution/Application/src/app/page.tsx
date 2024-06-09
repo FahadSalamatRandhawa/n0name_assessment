@@ -25,7 +25,6 @@ export default async function Page() {
     const req=(await fetch("http://localhost:3000/api/geodata",{cache:"no-cache",method:"GET"}))
     const {data}=await req.json()
 
-    console.log(data)
 
-    return <Map data={data} height={500} width={1000} />
+    return <Map />
 }

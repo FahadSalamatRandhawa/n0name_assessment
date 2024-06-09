@@ -1,0 +1,16 @@
+d3 library used for rendering map as it allows neat and clean maps, with better control. Although it is more difficult to implement
+[react-simple-maps and leaflet library was also used initially but discarded later]
+
+*It is not possible to relate a wallet with an IP or location, unless you have access to a centralized exchange, and listen for incoming requests*
+I believe the primary purpose of this task was to check skills on unique/workaround approach and to render maps with info.
+
+STEPS TO GET TOKEN HOLDERS
+
+1. Get transactions involving the desired token
+2. Seperate and clean addresses involed in transactions
+3. Check wallets if they hold balance, if they do they are holders
+
+
+STEPS TO RELATE LOCATION TO HOLDERS
+
+1. Loop the wallets and assign a random country to each wallet

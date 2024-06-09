@@ -1,0 +1,6 @@
+create .env file at toor and put MORALIS_API_KEY=yourkey
+
+run following commands, you can use npm instead of pnpm
+
+"pnpm install"
+"pnpm dev"
