@@ -52,6 +52,7 @@ const fetchTokenTransfers = async () => {
         .sort(([, a], [, b]) => b.total - a.total)
         .slice(0, 5);
 
+    console.log("----------------------------Top 5 active wllets (from 100 transactions)----------------------------\n")
     console.log(topWallets)
 };
 
